@@ -9,7 +9,19 @@ const { analyticsMiddleware } = require('./middleware/analytics');
 const app = express();
 
 // Middleware setup
-app.use(cors()); // Enable CORS for all routes
+const corsOptions = {
+  origin: [
+    'http://localhost:8080',
+    'https://novamailfront.vercel.app',
+    'https://novamailfront-1b1n2nl8w-alans-projects-97b09bca.vercel.app',
+    'https://nova-mail-backend.up.railway.app'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Admin-Key']
+};
+
+app.use(cors(corsOptions)); // Enable CORS with specific options
 app.use(express.json()); // Parse JSON request bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded request bodies
 
