@@ -13,7 +13,6 @@ const corsOptions = {
   origin: [
     'http://localhost:8080',
     'https://novamailfront.vercel.app',
-    'https://novamailfront-1b1n2nl8w-alans-projects-97b09bca.vercel.app',
     'https://nova-mail-backend.up.railway.app'
   ],
   credentials: true,
